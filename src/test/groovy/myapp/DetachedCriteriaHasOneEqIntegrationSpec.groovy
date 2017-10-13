@@ -15,7 +15,7 @@ class DetachedCriteriaHasOneEqIntegrationSpec extends Specification {
 		when:
 		Child.withTransaction {
 			new DetachedCriteria(Child).build {
-				eq "parent", null
+				isNull("parent")
 			}.get()
 		}
 
